@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
-    <main>
-        <h1>{{title}}</h1>
-    </main>
-    <footer>
-        Copyright Tapeshwar Kumar Ranjan 2026
-    </footer>
-</body>
-</html>
+{% extends 'layouts/base.html' %}
+
+
+{% block main_content %}
+<h1>{{title}}</h1>
+<div class="products row mt-4">
+
+    {% for product in products %}
+    <div class="card mt-4 col-4" style="width: 17rem;">
+        <img src="{{product.image_url}}" class="card-img-top" alt="{{product.name}}">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text"><b>Category:</b>{{product.category}}</p>
+            <!-- <p class="card-text"><b>Brand:</b>{{product.brand}}</p>
+            <p class="card-text"><b>Price:</b>{{product.price}}</p> 
+            <p class="card-text"><b>Discount Price:</b>{{product.discount_price}}</p>
+            <p class="card-text"><b>Items Remaining</b>{{product_stock}}</p>
+            <p class="card-text"><b>Rating:</b>{{product.rating}}</p> -->
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock main_content %}
