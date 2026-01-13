@@ -7,7 +7,7 @@
 
     {% for product in products %}
     <div class="card mt-4 col-4" style="width: 17rem;">
-        <img src="{{product.image_url}}" class="card-img-top" alt="{{product.name}}">
+        <img src="{{product.image_url.url}}" class="card-img-top" alt="{{product.name}}">
         <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
@@ -17,7 +17,7 @@
             <p class="card-text"><b>Discount Price:</b>{{product.discount_price}}</p>
             <p class="card-text"><b>Items Remaining</b>{{product_stock}}</p>
             <p class="card-text"><b>Rating:</b>{{product.rating}}</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-primary">Buy Now</a>
         </div>
     </div>
     {% endfor %}
